@@ -1,0 +1,53 @@
+//Resets, Variables, Mixins, and any utility classes
+$fontFam: 'Montserrat', sans-serif;
+$primColor: #1b1c25;
+$bgColor: #ebecf1;
+$costColor:#85bb65;
+$correctColor: #7ac142;
+$wrongColor: #ff0033;
+
+$min_width: 320px;
+$max_width: 1200px;
+$min_font: 16px;
+$max_font: 30px;
+
+
+  @mixin flexbox($height) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: $height;
+    
+  }
+
+  @mixin flexbox-children($percent) {
+    flex-basis:$percent;
+    text-align: center;
+    
+  }
+
+  @mixin sub-main-adjustments {
+    width: 80%;
+    padding-left: 10%;
+    padding-right: 10%;
+  }
+
+  @mixin solidbg($blur){
+    width: 50%;
+    position:absolute;
+    height: 100%;
+    top:0;
+    z-index: 0;
+    background-size: cover !important;
+    background-position: center !important;
+    transition: filter 2s;
+    filter: blur($blur);
+
+  }
+
+
+  @mixin background-opacity($oplevel: 0.6) {
+    background: rgba(235, 236, 241, $oplevel);
+  }
+
+
