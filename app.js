@@ -38,8 +38,8 @@ chooseRandomItems();
 
 
 $(".left-item").click(function(e){
+    $(".left-item").css("background","rgba(235, 236, 241, 1)")
     postClick();
-    $(".left-item").animate({opacity: 1}, 1000)
         setTimeout(function(){
             leftCost.css("visibility","visible") ;
             $(".left-cost span h1").css("visibility","visible");
@@ -72,7 +72,7 @@ $(".left-item").click(function(e){
 })
 
 $(".right-item").click(function(e){
-    $(".right-item").animate({opacity: 1}, 1000)
+    $(".right-item").css("background","rgba(235, 236, 241, 1)")
     postClick();
         setTimeout(function(){
             leftCost.css("visibility","visible") ;
@@ -192,7 +192,6 @@ function chooseRandomItems(){
 }
 function postClick(){
     $(".middle-item h1").animate({opacity: 0}, 1000)
-    $(".left-item").css("background","rgba(235, 236, 241, 1)")
     $(".left-item").unbind('click');
     $(".left-item").css("pointer-events","none")
     $(".right-item").css("pointer-events","none")
