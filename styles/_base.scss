@@ -1,4 +1,3 @@
-//Resets, Variables, Mixins, and any utility classes
 $fontFam: 'Montserrat', sans-serif;
 $primColor: #1b1c25;
 $bgColor: #ebecf1;
@@ -30,6 +29,19 @@ $max_font: 30px;
     width: 80%;
     padding-left: 10%;
     padding-right: 10%;
+  }
+
+  @mixin splitbg($blur){
+    width: 100%;
+    position:absolute;
+    height: 100%;
+    top:0;
+    z-index: 0;
+    background-size: cover !important;
+    background-position: center !important;
+    transition: filter 2s;
+    filter: blur($blur);
+
   }
 
   @mixin solidbg($blur){

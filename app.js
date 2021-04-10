@@ -1,4 +1,12 @@
 
+if (localStorage.getItem('score')!=null){
+    var score = JSON.parse(localStorage.getItem('score'));
+    $(".scoreNum").text(score);
+}
+else{
+    var score = 0;
+    $(".scoreNum").text(score);
+}
 var leftCost = $(".left-cost .left-number")
 var rightCost = $(".right-cost .right-number")
 var leftBg = $(".left-half-bg")
@@ -153,6 +161,7 @@ function wrongAnswer(){
     test.classList.remove("paused");
     test2.classList.remove("paused");
     test3.classList.remove("paused");
+    updateScore(0);
 }
 
 function correctAnswer(){
@@ -163,6 +172,7 @@ function correctAnswer(){
     test.classList.remove("paused");
     test2.classList.remove("paused");
     test3.classList.remove("paused");
+    updateScore(1);
 
 }
 
@@ -196,6 +206,18 @@ function postClick(){
     $(".left-item").css("pointer-events","none")
     $(".right-item").css("pointer-events","none")
     $(".right-item").unbind('click');
+}
+
+function updateScore(decision){
+    if (decision == 1){
+        score += 1
+        localStorage.setItem('score',`${JSON.stringify(score)}`)
+    }
+    else{
+        score = 0
+        localStorage.setItem('score',`${JSON.stringify(score)}`)
+    }
+
 }
 
 ;(function ($) {

@@ -1,5 +1,7 @@
-//CSS that handles layout such as header,footer, navbar, sidebar, forms, container, grid systems, etc
+
 @import "./base";
+@import "./components";
+
 
 html {
     font-family: $fontFam;
@@ -62,7 +64,7 @@ nav{
     text-decoration: none;
     padding: 0px 20px;
     color: rgba(27, 28, 37, .3);
-    font-size-adjust: .3;
+    font-size: 20px;
 
     &:hover{
       color: $primColor;
@@ -76,6 +78,7 @@ nav{
 .main-container{
   @include flexbox(85vh);
   flex-direction: column;
+  justify-content: space-around
 }
 
 
@@ -107,7 +110,6 @@ nav{
         text-align: center;
         margin: 0;
         color: $bgColor;
-        -webkit-text-stroke: 1px $primColor;
         text-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
     }
 
@@ -117,7 +119,6 @@ nav{
 .cost-container{
   @include flexbox(auto);
   @include sub-main-adjustments;
-  padding-top: 5vh;
   z-index: 10;
 
 }
@@ -146,7 +147,6 @@ nav{
   @include flexbox(auto);
   @include sub-main-adjustments;
   z-index: 10;
-  margin-top:20vh;
 
 }
 
@@ -166,6 +166,14 @@ nav{
 
 }
 
+.score{
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  color: $bgColor;
+  padding-right: 1em;
+}
+
 .request-form{
   text-align: center;
 }
@@ -181,6 +189,10 @@ nav{
   }
   .cost-container{
     width: 100%;
+  }
+  .score{
+    bottom: unset;
+    top: 12vh;
   }
 
 
